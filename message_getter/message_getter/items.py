@@ -4,11 +4,16 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
+from scrapy import Field, Item
 
-import scrapy
+
+class ForumTopicItem(Item):
+    name = Field()
+    url = Field()
 
 
-class MessageGetterItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class ForumMessageItem(Item):
+    text = Field()
+    author = Field()
+    date_time = Field()
+    topic_url = Field()
